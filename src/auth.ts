@@ -2,7 +2,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOptions = {
+export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Portfolio CMS Credentials",
@@ -47,9 +47,4 @@ export const authOptions = {
     },
   },
   secret: process.env.AUTH_SECRET,
-};
-
-// This correctly creates and exports the functions explicitly
-const { handlers, auth, signIn, signOut } = NextAuth(authOptions);
-
-export { handlers, auth, signIn, signOut };
+});

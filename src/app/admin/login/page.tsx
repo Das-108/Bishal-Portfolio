@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
         setLoading(false);
       } else {
         // Validation Successful! Route safely into the workspace dashboard shell
-        router.push("/admin/dashboard");
+        router.push("/admin/projects");
         router.refresh();
       }
     } catch (err) {

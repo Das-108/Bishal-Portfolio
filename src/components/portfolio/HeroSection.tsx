@@ -1,6 +1,5 @@
 import React from 'react';
-// import { RiArrowRightLine } from 'react-icons/ri';
-import image from '../assets/pic1.jpg'
+import image from '../../../public/assets/pic1.jpg'
 import CV from '../assets/jsCert.png'
 import Image from "next/image";
 
