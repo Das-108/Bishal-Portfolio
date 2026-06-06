@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* 1. V4 Class Variant Fix */
+@custom-variant dark (&:where(.dark, .dark *)); 
+
+@theme  {
+   /* --- Light Theme Variables (DEFAULT) --- */
+   --bg-primary: #fafafa;      /* maps to light-bg */
+   --bg-secondary: #F5E6CC;    /* maps to secondry */
+   --text-default: #0D0D0D;    /* maps to dark-bg (used as default text color) */
+   --color-accent: #9B87F5;
+   --color-border: #E4E4E4;    /* maps to border-light */
+   
+   /* --- Dark Theme Values (Used for OVERRIDE) --- */
+   --dark-bg-primary: #0D0D0D; /* maps to dark-bg */
+   --dark-bg-secondary: #B39162;/* maps to secondry-dark */
+   --dark-text-default: #EAEAEA;/* maps to primary-light (used as dark text color) */
+   --dark-color-accent: #A893F9;/* maps to accent-dark */
+   --dark-color-border: #2A2A2A;/* maps to border-dark */
+   
+   /* Font Families - Kept if you use them directly in the components */
+   /* --font-heading : 'Playfair Display',serif; */
+   /* --font-body : 'Inter', sans-serif; */
+}
+
+@layer base {
+   /* 1. Default styling for the page (Light Mode) */
+   body {
+      background-color: var(--bg-primary); 
+      color: var(--text-default);
+      /* Add font family if needed, e.g. font-family: var(--font-body); */
+   }
+
+   /* 2. Define the Dark Theme variable overrides on the .dark class */
+   .dark {
+      /* Override light variables with their dark equivalents */
+      --bg-primary: var(--dark-bg-primary); 
+      --bg-secondary: var(--dark-bg-secondary);
+      --text-default: var(--dark-text-default);
+      --color-accent: var(--dark-color-accent);
+      --color-border: var(--dark-color-border);
+   }
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+}
