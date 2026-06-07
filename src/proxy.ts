@@ -27,5 +27,5 @@ export async function proxy(request: NextRequest) {
 
 // Optimization Config: Ensure proxy matches only administrative route spaces
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin/:path*"], // This naturally captures all nested paths recursively!
 };
